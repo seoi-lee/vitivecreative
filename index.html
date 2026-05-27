@@ -1,0 +1,2123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VITIVE CREATIVE | 당신의 브랜드를 유행으로 만듭니다</title>
+<meta name="description" content="10만+ 팔로워 인플루언서가 만드는 진짜 매출. 인플루언서 마케팅, 블로그 운영, 1:1 브랜딩 컨설팅 전문 에이전시 바이티브크리에이티브.">
+<meta name="keywords" content="인플루언서 마케팅, 인플루언서 에이전시, 블로그 마케팅, 인스타그램 마케팅, 유튜브 마케팅, 브랜딩 컨설팅, 바이티브크리에이티브, VITIVE CREATIVE">
+<meta property="og:title" content="VITIVE CREATIVE | 당신의 브랜드를 유행으로 만듭니다">
+<meta property="og:description" content="10만+ 팔로워 인플루언서가 만드는 진짜 매출. 인플루언서 마케팅 전문 에이전시.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.vitivecreative.co.kr">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --orange: #ff6b1a;
+  --orange-light: #ff8842;
+  --orange-dark: #e55600;
+  --black: #0a0a0a;
+  --black-soft: #141414;
+  --white: #ffffff;
+  --gray-50: #fafafa;
+  --gray-100: #f5f5f5;
+  --gray-200: #e5e5e5;
+  --gray-400: #a3a3a3;
+  --gray-600: #525252;
+  --gray-800: #262626;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  color: var(--black);
+  background: var(--white);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.eng { font-family: 'Inter', sans-serif; }
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; text-decoration: none; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* ===== NAV ===== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.02em;
+}
+
+.logo .dot { color: var(--orange); }
+
+.nav-menu {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+
+.nav-menu a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-menu a:hover { color: var(--white); }
+
+.nav-cta {
+  background: var(--orange);
+  color: var(--black);
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: all 0.2s;
+}
+
+.nav-cta:hover { background: var(--orange-light); transform: translateY(-1px); }
+
+.mobile-toggle { display: none; background: none; border: none; color: white; font-size: 24px; cursor: pointer; }
+
+/* ===== HERO (BLACK) ===== */
+.hero {
+  background: var(--black);
+  color: var(--white);
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 140px 0 100px;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 107, 26, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: 'TRENDSETTER';
+  position: absolute;
+  bottom: -40px;
+  left: -20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 240px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.03);
+  letter-spacing: -0.05em;
+  white-space: nowrap;
+  pointer-events: none;
+  line-height: 1;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.25em;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+
+.hero-tag::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--orange);
+}
+
+.hero h1 {
+  font-size: clamp(40px, 6.5vw, 84px);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: 32px;
+}
+
+.hero h1 .accent { color: var(--orange); }
+
+.hero-sub {
+  font-size: clamp(15px, 1.4vw, 18px);
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 600px;
+  margin-bottom: 48px;
+  line-height: 1.8;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 72px;
+}
+
+.btn-primary {
+  background: var(--orange);
+  color: var(--black);
+  padding: 16px 32px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary:hover { background: var(--orange-light); transform: translateY(-2px); }
+
+.btn-secondary {
+  background: transparent;
+  color: var(--white);
+  padding: 16px 32px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover { background: rgba(255, 255, 255, 0.05); border-color: rgba(255, 255, 255, 0.5); }
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: 800px;
+}
+
+.stat-num {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat-num.accent { color: var(--orange); }
+
+.stat-label {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.02em;
+}
+
+/* ===== POSITIONING (BLACK) ===== */
+.positioning {
+  background: var(--black);
+  color: var(--white);
+  padding: 140px 0;
+  position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.pos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.section-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.25em;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.pos-grid h2 {
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.pos-grid h2 .accent { color: var(--orange); }
+
+.pos-content p {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 24px;
+  line-height: 1.9;
+}
+
+.pos-content p strong {
+  color: var(--white);
+  font-weight: 700;
+}
+
+.pos-tags {
+  margin-top: 40px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pos-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+
+/* ===== SERVICES (WHITE) ===== */
+.services {
+  background: var(--white);
+  padding: 140px 0;
+}
+
+.section-head {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 80px;
+}
+
+.section-head .section-label {
+  color: var(--orange);
+}
+
+.section-head h2 {
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+
+.section-head h2 .accent { color: var(--orange); }
+
+.section-head p {
+  font-size: 17px;
+  color: var(--gray-600);
+  line-height: 1.8;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.service-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 20px;
+  padding: 32px 24px;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card:hover {
+  border-color: var(--orange);
+  transform: translateY(-4px);
+  box-shadow: 0 24px 48px -16px rgba(255, 107, 26, 0.15);
+}
+
+.service-num {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--orange);
+  letter-spacing: 0.1em;
+  margin-bottom: 28px;
+}
+
+.service-icon {
+  width: 56px;
+  height: 56px;
+  background: var(--black);
+  color: var(--orange);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+  font-size: 24px;
+}
+
+.service-card h3 {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
+
+.service-card .desc {
+  font-size: 14px;
+  color: var(--gray-600);
+  line-height: 1.75;
+  margin-bottom: 24px;
+}
+
+.service-features {
+  list-style: none;
+  padding: 24px 0 0;
+  border-top: 1px solid var(--gray-200);
+}
+
+.service-features li {
+  font-size: 13px;
+  color: var(--gray-800);
+  padding: 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.service-features li::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  background: var(--orange);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ===== VALUES (WHITE) ===== */
+.values {
+  background: var(--gray-50);
+  padding: 140px 0;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 80px;
+}
+
+.value-card {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 48px 36px;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.value-card:hover { transform: translateY(-4px); box-shadow: 0 24px 48px -16px rgba(0,0,0,0.08); }
+
+.value-num {
+  font-family: 'Inter', sans-serif;
+  font-size: 64px;
+  font-weight: 900;
+  color: var(--orange);
+  line-height: 1;
+  letter-spacing: -0.05em;
+  margin-bottom: 32px;
+  display: block;
+}
+
+.value-card h3 {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.value-card p {
+  font-size: 15px;
+  color: var(--gray-600);
+  line-height: 1.8;
+}
+
+/* ===== STATS (BLACK) ===== */
+.stats-section {
+  background: var(--black);
+  color: var(--white);
+  padding: 140px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.stats-section::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 107, 26, 0.1) 0%, transparent 70%);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.stats-section .section-head h2 { color: var(--white); }
+.stats-section .section-head p { color: rgba(255, 255, 255, 0.6); }
+
+.big-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin-top: 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.big-stat {
+  text-align: center;
+  padding: 0 32px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.big-stat:last-child { border-right: none; }
+
+.big-stat .num {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(56px, 8vw, 96px);
+  font-weight: 900;
+  color: var(--orange);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  margin-bottom: 16px;
+}
+
+.big-stat .label {
+  font-size: 16px;
+  color: var(--white);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.big-stat .sub {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ===== PROCESS (WHITE) ===== */
+.process {
+  background: var(--white);
+  padding: 140px 0;
+}
+
+.process-list {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.process-item {
+  display: grid;
+  grid-template-columns: 120px 1fr auto;
+  gap: 40px;
+  align-items: center;
+  padding: 36px 0;
+  border-top: 1px solid var(--gray-200);
+  transition: all 0.3s;
+}
+
+.process-item:last-child { border-bottom: 1px solid var(--gray-200); }
+
+.process-item:hover { padding-left: 16px; }
+
+.process-item:hover .process-num { color: var(--orange); }
+
+.process-num {
+  font-family: 'Inter', sans-serif;
+  font-size: 56px;
+  font-weight: 900;
+  color: var(--gray-200);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  transition: color 0.3s;
+}
+
+.process-content h3 {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.process-content p {
+  font-size: 15px;
+  color: var(--gray-600);
+  line-height: 1.7;
+}
+
+.process-arrow {
+  font-size: 24px;
+  color: var(--gray-200);
+  transition: all 0.3s;
+}
+
+.process-item:hover .process-arrow { color: var(--orange); transform: translateX(4px); }
+
+/* ===== FOUNDER (WHITE) ===== */
+.founder {
+  background: var(--gray-50);
+  padding: 140px 0;
+}
+
+.founder-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.founder-visual {
+  background: var(--black);
+  border-radius: 32px;
+  padding: 60px 48px;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4/5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.founder-visual::before {
+  content: 'CEO';
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: var(--orange);
+  font-weight: 600;
+}
+
+.founder-visual::after {
+  content: '@shesblanc';
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.founder-name-block .ko {
+  font-size: 56px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+}
+
+.founder-name-block .en {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.05em;
+}
+
+.founder-creds {
+  list-style: none;
+}
+
+.founder-creds li {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.founder-creds li::before {
+  content: '';
+  width: 16px;
+  height: 1px;
+  background: var(--orange);
+  flex-shrink: 0;
+}
+
+.founder-content h2 {
+  font-size: clamp(32px, 3.5vw, 44px);
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 28px;
+}
+
+.founder-content h2 .accent { color: var(--orange); }
+
+.founder-content p {
+  font-size: 16px;
+  color: var(--gray-600);
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+
+.founder-content p strong { color: var(--black); font-weight: 700; }
+
+.founder-meta {
+  margin-top: 36px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  padding-top: 32px;
+  border-top: 1px solid var(--gray-200);
+}
+
+.founder-meta div .label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: var(--gray-400);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.founder-meta div .val {
+  font-size: 15px;
+  color: var(--black);
+  font-weight: 700;
+}
+
+/* ===== CTA / CONTACT (BLACK) ===== */
+.contact {
+  background: var(--black);
+  color: var(--white);
+  padding: 140px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact::before {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 107, 26, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-info h2 {
+  font-size: clamp(36px, 4.5vw, 60px);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 28px;
+}
+
+.contact-info h2 .accent { color: var(--orange); }
+
+.contact-info p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.9;
+  margin-bottom: 40px;
+}
+
+.contact-checks {
+  list-style: none;
+}
+
+.contact-checks li {
+  font-size: 14px;
+  color: var(--white);
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.contact-checks li::before {
+  content: '✓';
+  width: 24px;
+  height: 24px;
+  background: var(--orange);
+  color: var(--black);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.contact-form {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 40px;
+}
+
+.form-row {
+  margin-bottom: 20px;
+}
+
+.form-row label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+}
+
+.form-row input,
+.form-row textarea,
+.form-row select {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 14px;
+  color: var(--white);
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.form-row input::placeholder,
+.form-row textarea::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.form-row input:focus,
+.form-row textarea:focus,
+.form-row select:focus {
+  outline: none;
+  border-color: var(--orange);
+  background: rgba(255, 107, 26, 0.05);
+}
+
+.form-row textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-row select option {
+  background: var(--black);
+  color: var(--white);
+}
+
+.form-submit {
+  width: 100%;
+  background: var(--orange);
+  color: var(--black);
+  border: none;
+  padding: 18px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+  margin-top: 8px;
+}
+
+.form-submit:hover { background: var(--orange-light); transform: translateY(-1px); }
+
+.form-note {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+  margin-top: 16px;
+  line-height: 1.6;
+}
+
+/* ===== FOOTER (BLACK) ===== */
+footer {
+  background: var(--black);
+  color: rgba(255, 255, 255, 0.5);
+  padding: 60px 0 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 48px;
+}
+
+.footer-brand .logo {
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.footer-brand p {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.8;
+  max-width: 360px;
+}
+
+.footer-col h4 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 16px;
+  letter-spacing: 0.05em;
+}
+
+.footer-col ul { list-style: none; }
+.footer-col li { padding: 4px 0; }
+.footer-col a {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--orange); }
+
+.footer-bottom {
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.35);
+  font-family: 'Inter', sans-serif;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 968px) {
+  .container { padding: 0 24px; }
+  .nav-menu { display: none; }
+  .mobile-toggle { display: block; }
+  .nav-cta { padding: 8px 16px; font-size: 12px; }
+  
+  .hero { padding: 120px 0 80px; min-height: auto; }
+  .hero::after { font-size: 120px; bottom: -20px; }
+  .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  
+  .pos-grid, .founder-grid, .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  
+  .services-grid, .values-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .big-stats {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  
+  .big-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 48px; }
+  .big-stat:last-child { border-bottom: none; padding-bottom: 0; }
+  
+  .process-item {
+    grid-template-columns: 60px 1fr;
+    gap: 20px;
+  }
+  
+  .process-num { font-size: 36px; }
+  .process-arrow { display: none; }
+  
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .footer-bottom { flex-direction: column; }
+  
+  .positioning, .services, .values, .stats-section, .process, .founder, .contact { padding: 80px 0; }
+  
+  .founder-visual { aspect-ratio: auto; padding: 40px 32px; }
+  .founder-name-block .ko { font-size: 40px; }
+  
+  .section-head { margin-bottom: 56px; }
+}
+
+@media (min-width: 969px) and (max-width: 1180px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  opacity: 0;
+}
+
+.fade-in.visible {
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+/* ===== CREATOR (WHITE) ===== */
+.creator-section {
+  background: var(--white);
+  padding: 140px 0;
+}
+
+.creator-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin: 0 auto 60px;
+  max-width: 900px;
+}
+
+.filter-group {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  color: var(--gray-600);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.filter-btn:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.filter-btn.active {
+  background: var(--black);
+  color: var(--white);
+  border-color: var(--black);
+}
+
+.filter-divider {
+  width: 1px;
+  background: var(--gray-200);
+  margin: 0 8px;
+}
+
+.creators-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  min-height: 200px;
+}
+
+.creator-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.creator-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--orange);
+  box-shadow: 0 20px 40px -16px rgba(255, 107, 26, 0.15);
+}
+
+.creator-image {
+  aspect-ratio: 1;
+  background: var(--gray-100);
+  position: relative;
+  overflow: hidden;
+}
+
+.creator-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.creator-image .placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  color: var(--gray-200);
+  background: var(--black);
+}
+
+.creator-platform-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(8px);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+}
+
+.creator-info {
+  padding: 18px 20px;
+}
+
+.creator-name {
+  font-size: 15px;
+  font-weight: 800;
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+
+.creator-handle {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: var(--gray-600);
+  margin-bottom: 12px;
+}
+
+.creator-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid var(--gray-100);
+}
+
+.creator-followers {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--orange);
+}
+
+.creator-category {
+  font-size: 11px;
+  color: var(--gray-600);
+  background: var(--gray-100);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.loading-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 0;
+  color: var(--gray-400);
+  font-size: 14px;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 0;
+  color: var(--gray-400);
+  font-size: 14px;
+}
+
+/* ===== PORTFOLIO (BLACK) ===== */
+.portfolio-section {
+  background: var(--black);
+  color: var(--white);
+  padding: 140px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-section::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 107, 26, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.portfolio-section .section-head h2 { color: var(--white); }
+.portfolio-section .section-head p { color: rgba(255, 255, 255, 0.6); }
+
+.portfolio-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin: 0 auto 60px;
+  max-width: 700px;
+  position: relative;
+  z-index: 2;
+}
+
+.portfolio-filters .filter-btn {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.portfolio-filters .filter-btn:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.portfolio-filters .filter-btn.active {
+  background: var(--orange);
+  color: var(--black);
+  border-color: var(--orange);
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  position: relative;
+  z-index: 2;
+  min-height: 200px;
+}
+
+.portfolio-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--orange);
+  background: rgba(255, 107, 26, 0.04);
+}
+
+.portfolio-thumb {
+  aspect-ratio: 9 / 16;
+  background: #1a1a1a;
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portfolio-thumb iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.portfolio-thumb .play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.5) 100%);
+  pointer-events: none;
+}
+
+.portfolio-thumb .play-icon {
+  width: 56px;
+  height: 56px;
+  background: rgba(255, 107, 26, 0.95);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--black);
+  font-size: 20px;
+}
+
+.portfolio-platform-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--black);
+  font-size: 11px;
+  font-weight: 800;
+  padding: 6px 12px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+}
+
+.portfolio-info {
+  padding: 22px 24px;
+}
+
+.portfolio-client {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: var(--orange);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  margin-bottom: 8px;
+}
+
+.portfolio-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 16px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.portfolio-stats {
+  display: flex;
+  gap: 20px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.portfolio-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-stat-num {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.02em;
+}
+
+.portfolio-stat-label {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+@media (max-width: 968px) {
+  .creators-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .portfolio-grid { grid-template-columns: 1fr; }
+  .creator-section, .portfolio-section { padding: 80px 0; }
+  .creator-filters, .portfolio-filters { margin-bottom: 40px; }
+  .filter-divider { display: none; }
+}
+
+@media (min-width: 969px) and (max-width: 1180px) {
+  .creators-grid { grid-template-columns: repeat(3, 1fr); }
+  .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#intro" class="logo">VITIVE<span class="dot">.</span>CREATIVE</a>
+    <ul class="nav-menu">
+      <li><a href="#intro">INTRO</a></li>
+      <li><a href="#creator">CREATOR</a></li>
+      <li><a href="#portfolio">PORTFOLIO</a></li>
+      <li><a href="#process">PROCESS</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">광고주 문의</a>
+    <button class="mobile-toggle" aria-label="메뉴">☰</button>
+  </div>
+</nav>
+
+<!-- HERO / INTRO -->
+<section class="hero" id="intro">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-tag">STORYTELLING MARKETING AGENCY</div>
+      <h1>
+        브랜드는<br>
+        <span class="accent">광고되지 않습니다.</span><br>
+        스토리 속에 살아납니다.
+      </h1>
+      <p class="hero-sub">
+        인스타그램, 유튜브, 블로그, 네이버 클립.<br>
+        고객이 발견하고 결정하는 4개의 길목에서<br>
+        브랜드가 자연스러운 스토리가 되도록 만듭니다.
+      </p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-primary">광고주 문의 →</a>
+        <a href="#services" class="btn-secondary">서비스 알아보기</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num accent">4</div>
+          <div class="stat-label">통합 운영 플랫폼</div>
+        </div>
+        <div>
+          <div class="stat-num">100K+</div>
+          <div class="stat-label">대표 인스타 팔로워</div>
+        </div>
+        <div>
+          <div class="stat-num">500+</div>
+          <div class="stat-label">크리에이터 풀</div>
+        </div>
+        <div>
+          <div class="stat-num">200+</div>
+          <div class="stat-label">캠페인 진행</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POSITIONING -->
+<section class="positioning" id="about">
+  <div class="container">
+    <div class="pos-grid">
+      <div>
+        <div class="section-label">OUR PHILOSOPHY</div>
+        <h2>
+          제품을<br>
+          광고하지 마세요.<br>
+          <span class="accent">고객의 일상이</span><br>
+          <span class="accent">되세요.</span>
+        </h2>
+      </div>
+      <div class="pos-content">
+        <p>
+          소비자는 더 이상 <strong>광고를 보지 않습니다.</strong>
+          스킵하고, 차단하고, 스크롤로 넘깁니다.
+        </p>
+        <p>
+          하지만 좋아하는 크리에이터의 <strong>일상 속에 등장한 브랜드</strong>는
+          끝까지 봅니다. 댓글을 달고, 저장하고, 구매로 이어집니다.
+        </p>
+        <p>
+          바이티브크리에이티브는 브랜드를 <strong>광고 대신 스토리로 만듭니다.</strong>
+          인스타·유튜브·블로그·네이버 클립 4개 플랫폼에서
+          고객이 자연스럽게 발견하고, 검색하고, 결정하는 동선을 설계합니다.
+        </p>
+        <div class="pos-tags">
+          <span class="pos-tag">#스토리텔링마케팅</span>
+          <span class="pos-tag">#올플랫폼운영</span>
+          <span class="pos-tag">#인스타그램</span>
+          <span class="pos-tag">#유튜브</span>
+          <span class="pos-tag">#블로그</span>
+          <span class="pos-tag">#네이버클립</span>
+          <span class="pos-tag">#전환중심</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">PLATFORM SOLUTIONS</div>
+      <h2>4개의 플랫폼,<br><span class="accent">하나의 스토리</span></h2>
+      <p>고객은 한 채널에서 결정하지 않습니다.<br>발견·관심·검색·결정의 모든 길목에서 브랜드를 살아 움직이게 만듭니다.</p>
+    </div>
+    <div class="services-grid">
+      
+      <div class="service-card">
+        <div class="service-num">PLATFORM 01</div>
+        <div class="service-icon">📷</div>
+        <h3>인스타그램</h3>
+        <p class="desc">
+          크리에이터의 일상 속에 브랜드를 자연스럽게 등장시킵니다.
+          광고가 아닌 라이프스타일로.
+        </p>
+        <ul class="service-features">
+          <li>피드·릴스·스토리 통합 운영</li>
+          <li>10만+ 운영 노하우 직접 반영</li>
+          <li>해시태그·발견 탭 최적화</li>
+          <li>광고주 브랜드 톤 보존</li>
+        </ul>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-num">PLATFORM 02</div>
+        <div class="service-icon">▶</div>
+        <h3>유튜브</h3>
+        <p class="desc">
+          긴 호흡으로 깊은 신뢰를 만듭니다.
+          롱폼 리뷰부터 쇼츠 바이럴까지.
+        </p>
+        <ul class="service-features">
+          <li>롱폼·쇼츠 통합 기획</li>
+          <li>구매 직전 신뢰 형성</li>
+          <li>비교·리뷰 콘텐츠 설계</li>
+          <li>검색 노출 최적화</li>
+        </ul>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-num">PLATFORM 03</div>
+        <div class="service-icon">📝</div>
+        <h3>네이버 블로그</h3>
+        <p class="desc">
+          한국 소비자가 진짜 결정하는 곳.
+          프드프 강사가 직접 설계하는 검색 전략.
+        </p>
+        <ul class="service-features">
+          <li>상위 노출 키워드 전략</li>
+          <li>프드프 강사 노하우 적용</li>
+          <li>검색·후기 통합 운영</li>
+          <li>장기 자산형 콘텐츠</li>
+        </ul>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-num">PLATFORM 04</div>
+        <div class="service-icon">🎬</div>
+        <h3>네이버 클립</h3>
+        <p class="desc">
+          네이버 쇼핑과 바로 연결되는
+          한국 토종 숏폼 채널을 선점합니다.
+        </p>
+        <ul class="service-features">
+          <li>네이버 생태계 통합 활용</li>
+          <li>쇼핑 전환 직결 콘텐츠</li>
+          <li>블로그·클립 시너지 운영</li>
+          <li>신흥 시장 선점 기회</li>
+        </ul>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- CREATOR -->
+<section class="creator-section" id="creator">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">OUR CREATORS</div>
+      <h2>스토리를 만드는<br><span class="accent">크리에이터들</span></h2>
+      <p>카테고리·플랫폼·팔로워 규모별로 검증된 크리에이터를 매칭합니다.<br>광고주의 브랜드에 가장 어울리는 크리에이터를 찾아드립니다.</p>
+    </div>
+    
+    <div class="creator-filters">
+      <div class="filter-group" id="creator-platform-filter">
+        <button class="filter-btn active" data-filter="platform" data-value="all">전체</button>
+        <button class="filter-btn" data-filter="platform" data-value="인스타">인스타</button>
+        <button class="filter-btn" data-filter="platform" data-value="유튜브">유튜브</button>
+        <button class="filter-btn" data-filter="platform" data-value="블로그">블로그</button>
+        <button class="filter-btn" data-filter="platform" data-value="네이버클립">네이버클립</button>
+      </div>
+      <div class="filter-divider"></div>
+      <div class="filter-group" id="creator-category-filter">
+        <button class="filter-btn active" data-filter="category" data-value="all">전 카테고리</button>
+        <button class="filter-btn" data-filter="category" data-value="뷰티">뷰티</button>
+        <button class="filter-btn" data-filter="category" data-value="패션">패션</button>
+        <button class="filter-btn" data-filter="category" data-value="푸드">푸드</button>
+        <button class="filter-btn" data-filter="category" data-value="라이프">라이프</button>
+        <button class="filter-btn" data-filter="category" data-value="여행">여행</button>
+        <button class="filter-btn" data-filter="category" data-value="헬스">헬스</button>
+      </div>
+    </div>
+    
+    <div class="creators-grid" id="creators-grid">
+      <div class="loading-state">크리에이터 정보를 불러오는 중...</div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio-section" id="portfolio">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">CAMPAIGN PORTFOLIO</div>
+      <h2>스토리가 만든<br><span class="accent">진짜 결과</span></h2>
+      <p>인스타 릴스, 유튜브 쇼츠, 네이버 클립까지.<br>실제 진행한 캠페인과 성과를 확인하세요.</p>
+    </div>
+    
+    <div class="portfolio-filters" id="portfolio-filter">
+      <button class="filter-btn active" data-filter="platform" data-value="all">전체</button>
+      <button class="filter-btn" data-filter="platform" data-value="인스타">인스타</button>
+      <button class="filter-btn" data-filter="platform" data-value="유튜브">유튜브</button>
+      <button class="filter-btn" data-filter="platform" data-value="블로그">블로그</button>
+      <button class="filter-btn" data-filter="platform" data-value="네이버클립">네이버클립</button>
+    </div>
+    
+    <div class="portfolio-grid" id="portfolio-grid">
+      <div class="loading-state" style="color: rgba(255,255,255,0.4)">캠페인 정보를 불러오는 중...</div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">WHY VITIVE</div>
+      <h2>바이티브가<br><span class="accent">다른 3가지 이유</span></h2>
+      <p>스토리로 파는 마케팅, 4개 플랫폼 통합 운영.<br>광고주의 매출을 만드는 진짜 파트너십.</p>
+    </div>
+    <div class="values-grid">
+      
+      <div class="value-card">
+        <span class="value-num">01</span>
+        <h3>광고가 아닌<br>스토리를 팝니다</h3>
+        <p>
+          제품을 광고하지 않습니다.
+          크리에이터의 일상에 자연스럽게 등장시켜
+          소비자가 '발견하게' 만듭니다.
+        </p>
+      </div>
+      
+      <div class="value-card">
+        <span class="value-num">02</span>
+        <h3>4개 플랫폼을<br>한 팀이 운영합니다</h3>
+        <p>
+          인스타·유튜브·블로그·네이버 클립을
+          따로따로가 아닌 하나의 동선으로 설계.
+          발견부터 결정까지 모든 길목을 커버합니다.
+        </p>
+      </div>
+      
+      <div class="value-card">
+        <span class="value-num">03</span>
+        <h3>운영해본 사람이<br>운영합니다</h3>
+        <p>
+          10만+ 인스타 운영, 프드프 블로그 강사.
+          이론이 아닌 직접 검증한 노하우를
+          모든 캠페인에 그대로 적용합니다.
+        </p>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- BIG STATS -->
+<section class="stats-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">BY THE NUMBERS</div>
+      <h2>숫자가 증명하는<br><span class="accent">바이티브의 신뢰</span></h2>
+      <p>지난 시간 동안 광고주와 크리에이터가 함께 만들어온 결과입니다.</p>
+    </div>
+    <div class="big-stats">
+      <div class="big-stat">
+        <div class="num">100K+</div>
+        <div class="label">대표 인스타 팔로워</div>
+        <div class="sub">@shesblanc</div>
+      </div>
+      <div class="big-stat">
+        <div class="num">500+</div>
+        <div class="label">검증된 크리에이터 풀</div>
+        <div class="sub">인스타·유튜브·블로그</div>
+      </div>
+      <div class="big-stat">
+        <div class="num">200+</div>
+        <div class="label">진행 캠페인</div>
+        <div class="sub">뷰티·패션·라이프스타일</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">HOW WE WORK</div>
+      <h2>5단계 캠페인<br><span class="accent">프로세스</span></h2>
+      <p>문의부터 성과 분석까지,<br>투명하고 체계적인 진행 과정.</p>
+    </div>
+    <div class="process-list">
+      
+      <div class="process-item">
+        <div class="process-num">01</div>
+        <div class="process-content">
+          <h3>문의 & 무료 상담</h3>
+          <p>광고주의 브랜드, 목표, 예산을 파악하고 맞춤 제안서를 준비합니다.</p>
+        </div>
+        <div class="process-arrow">→</div>
+      </div>
+      
+      <div class="process-item">
+        <div class="process-num">02</div>
+        <div class="process-content">
+          <h3>전략 수립 & 크리에이터 매칭</h3>
+          <p>타겟에 가장 맞는 크리에이터를 풀에서 선별하고 채널 전략을 설계합니다.</p>
+        </div>
+        <div class="process-arrow">→</div>
+      </div>
+      
+      <div class="process-item">
+        <div class="process-num">03</div>
+        <div class="process-content">
+          <h3>콘텐츠 기획 & 제작</h3>
+          <p>브랜드 톤과 크리에이터 색깔이 살아있는 콘텐츠를 함께 만듭니다.</p>
+        </div>
+        <div class="process-arrow">→</div>
+      </div>
+      
+      <div class="process-item">
+        <div class="process-num">04</div>
+        <div class="process-content">
+          <h3>업로드 & 캠페인 실행</h3>
+          <p>최적 시간대에 업로드하고, 댓글·DM·CS까지 통합 관리합니다.</p>
+        </div>
+        <div class="process-arrow">→</div>
+      </div>
+      
+      <div class="process-item">
+        <div class="process-num">05</div>
+        <div class="process-content">
+          <h3>성과 리포트 & 인사이트</h3>
+          <p>도달·전환·매출 데이터를 분석하고 다음 캠페인 방향을 제안합니다.</p>
+        </div>
+        <div class="process-arrow">→</div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="founder" id="founder">
+  <div class="container">
+    <div class="founder-grid">
+      <div class="founder-visual">
+        <div class="founder-name-block">
+          <div class="ko">이서이</div>
+          <div class="en">LEE SEOI</div>
+        </div>
+        <ul class="founder-creds">
+          <li>VITIVE CREATIVE 대표</li>
+          <li>@shesblanc · 10만+ 팔로워</li>
+          <li>프드프 블로그 강사</li>
+          <li>'블로그로 수익만드는 사람들' 운영자</li>
+        </ul>
+      </div>
+      <div class="founder-content">
+        <div class="section-label">FOUNDER</div>
+        <h2>크리에이터의 언어를<br>아는 <span class="accent">대표가 만드는</span><br>에이전시.</h2>
+        <p>
+          이서이 대표는 <strong>인스타그램 @shesblanc 10만+ 팔로워</strong>를 운영하는 현직 크리에이터입니다.
+        </p>
+        <p>
+          프드프 블로그 강사로 활동하며 <strong>'블로그로 수익만드는 사람들'</strong>이라는
+          1만+ 회원 네이버 카페를 운영하고 있습니다.
+        </p>
+        <p>
+          광고주의 목표와 크리에이터의 자존감을 모두 지키는 방식.
+          이것이 바이티브가 다른 에이전시와 다른 이유입니다.
+        </p>
+        <div class="founder-meta">
+          <div>
+            <div class="label">CAFE</div>
+            <div class="val">블로그로 수익만드는 사람들</div>
+          </div>
+          <div>
+            <div class="label">INSTAGRAM</div>
+            <div class="val">@shesblanc</div>
+          </div>
+          <div>
+            <div class="label">EDUCATION</div>
+            <div class="val">프드프 블로그 강사</div>
+          </div>
+          <div>
+            <div class="label">BUSINESS NO.</div>
+            <div class="val">722-19-02037</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="section-label">GET IN TOUCH</div>
+        <h2>매출을 만드는<br>캠페인,<br><span class="accent">지금 시작하세요.</span></h2>
+        <p>
+          간단한 정보만 남겨주시면<br>
+          담당자가 24시간 내에 연락드립니다.<br>
+          무료 상담부터 부담 없이 시작하세요.
+        </p>
+        <ul class="contact-checks">
+          <li>무료 상담 및 맞춤 제안서 제공</li>
+          <li>광고주 비즈니스 단계 분석</li>
+          <li>예산 범위 내 최적 솔루션 제시</li>
+          <li>계약 전 부담 없는 미팅</li>
+        </ul>
+      </div>
+      
+      <form class="contact-form" action="https://formspree.io/f/xzdypgzj" method="POST">
+        <div class="form-row">
+          <label>회사명 / 브랜드명 *</label>
+          <input type="text" name="company" required placeholder="예: 바이티브크리에이티브">
+        </div>
+        <div class="form-row">
+          <label>담당자명 *</label>
+          <input type="text" name="name" required placeholder="홍길동">
+        </div>
+        <div class="form-row">
+          <label>연락처 *</label>
+          <input type="tel" name="phone" required placeholder="010-0000-0000">
+        </div>
+        <div class="form-row">
+          <label>이메일 *</label>
+          <input type="email" name="email" required placeholder="example@company.com">
+        </div>
+        <div class="form-row">
+          <label>관심 플랫폼 *</label>
+          <select name="service" required>
+            <option value="">선택해주세요</option>
+            <option value="instagram">인스타그램</option>
+            <option value="youtube">유튜브</option>
+            <option value="naver_blog">네이버 블로그</option>
+            <option value="naver_clip">네이버 클립</option>
+            <option value="all">올플랫폼 통합 패키지</option>
+            <option value="consulting">1:1 브랜딩 컨설팅</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>문의 내용</label>
+          <textarea name="message" placeholder="브랜드, 목표, 예산 등을 자유롭게 작성해주세요."></textarea>
+        </div>
+        <button type="submit" class="form-submit">문의하기 →</button>
+        <p class="form-note">
+          문의 양식을 작성하시면 담당자에게 바로 전달됩니다.<br>
+          영업일 기준 24시간 내 회신드립니다.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">VITIVE<span class="dot">.</span>CREATIVE</a>
+        <p>
+          브랜드는 광고되지 않습니다.<br>
+          스토리 속에 살아납니다.<br>
+          인스타·유튜브·블로그·네이버 클립을 통합 운영하는 스토리텔링 마케팅 에이전시.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>PLATFORMS</h4>
+        <ul>
+          <li><a href="#services">인스타그램</a></li>
+          <li><a href="#services">유튜브</a></li>
+          <li><a href="#services">네이버 블로그</a></li>
+          <li><a href="#services">네이버 클립</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>CONNECT</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/shesblanc/" target="_blank">Instagram</a></li>
+          <li><a href="https://cafe.naver.com/blogprofitlab" target="_blank">Naver Cafe</a></li>
+          <li><a href="#contact">문의하기</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 VITIVE CREATIVE. All rights reserved.</div>
+      <div>사업자등록번호 722-19-02037 · 바이티브코퍼레이션</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Smooth scroll with offset
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href === '#' || href.length < 2) return;
+    const target = document.querySelector(href);
+    if (!target) return;
+    e.preventDefault();
+    const offset = 70;
+    const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+    window.scrollTo({ top, behavior: 'smooth' });
+  });
+});
+
+// Mobile menu toggle (placeholder for future enhancement)
+const mobileToggle = document.querySelector('.mobile-toggle');
+const navMenu = document.querySelector('.nav-menu');
+if (mobileToggle && navMenu) {
+  mobileToggle.addEventListener('click', () => {
+    navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+    navMenu.style.position = 'absolute';
+    navMenu.style.top = '100%';
+    navMenu.style.left = '0';
+    navMenu.style.right = '0';
+    navMenu.style.flexDirection = 'column';
+    navMenu.style.background = 'rgba(10,10,10,0.95)';
+    navMenu.style.padding = '24px';
+    navMenu.style.gap = '20px';
+  });
+}
+
+// Intersection Observer for fade-in
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// ========== GOOGLE SHEETS DATA INTEGRATION ==========
+const SHEETS_API_URL = 'YOUR_APPS_SCRIPT_URL_HERE';
+
+let creatorsData = [];
+let portfolioData = [];
+let creatorFilters = { platform: 'all', category: 'all' };
+let portfolioFilters = { platform: 'all' };
+
+function formatFollowers(num) {
+  if (!num || isNaN(num)) return '-';
+  num = Number(num);
+  if (num >= 10000) return (num / 10000).toFixed(num >= 100000 ? 0 : 1).replace('.0', '') + '만';
+  if (num >= 1000) return (num / 1000).toFixed(1).replace('.0', '') + 'K';
+  return num.toLocaleString();
+}
+
+function getInitial(name) {
+  if (!name) return '?';
+  return name.charAt(0).toUpperCase();
+}
+
+function renderCreators() {
+  const grid = document.getElementById('creators-grid');
+  if (!grid) return;
+  
+  const filtered = creatorsData.filter(c => {
+    const pMatch = creatorFilters.platform === 'all' || c.platform === creatorFilters.platform;
+    const cMatch = creatorFilters.category === 'all' || c.category === creatorFilters.category;
+    return pMatch && cMatch;
+  });
+  
+  if (filtered.length === 0) {
+    grid.innerHTML = '<div class="empty-state">해당 조건에 맞는 크리에이터가 없습니다.</div>';
+    return;
+  }
+  
+  grid.innerHTML = filtered.map(c => {
+    const imgHtml = c.profile_image 
+      ? '<img src="' + c.profile_image + '" alt="' + (c.name || '') + '" onerror="this.parentElement.innerHTML=\'<div class=&quot;placeholder&quot;>' + getInitial(c.name) + '</div>\'">'
+      : '<div class="placeholder">' + getInitial(c.name) + '</div>';
+    
+    const link = c.link ? c.link : '#';
+    
+    return '<a href="' + link + '" target="_blank" rel="noopener" class="creator-card">' +
+      '<div class="creator-image">' +
+        imgHtml +
+        (c.platform ? '<div class="creator-platform-badge">' + c.platform + '</div>' : '') +
+      '</div>' +
+      '<div class="creator-info">' +
+        '<div class="creator-name">' + (c.name || '-') + '</div>' +
+        '<div class="creator-handle">' + (c.handle || '') + '</div>' +
+        '<div class="creator-meta">' +
+          '<div class="creator-followers">' + formatFollowers(c.followers) + '</div>' +
+          (c.category ? '<div class="creator-category">' + c.category + '</div>' : '') +
+        '</div>' +
+      '</div>' +
+    '</a>';
+  }).join('');
+}
+
+function getEmbedUrl(url, platform) {
+  if (!url) return null;
+  
+  if (platform && platform.includes('유튜브')) {
+    const ytMatch = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([a-zA-Z0-9_-]+)/);
+    if (ytMatch) return 'https://www.youtube.com/embed/' + ytMatch[1];
+  }
+  
+  if (platform && platform.includes('인스타')) {
+    const igMatch = url.match(/instagram\.com\/(?:reel|p|tv)\/([a-zA-Z0-9_-]+)/);
+    if (igMatch) return 'https://www.instagram.com/p/' + igMatch[1] + '/embed';
+  }
+  
+  return null;
+}
+
+function renderPortfolio() {
+  const grid = document.getElementById('portfolio-grid');
+  if (!grid) return;
+  
+  const filtered = portfolioData.filter(p => {
+    if (portfolioFilters.platform === 'all') return true;
+    return p.platform && p.platform.includes(portfolioFilters.platform);
+  });
+  
+  if (filtered.length === 0) {
+    grid.innerHTML = '<div class="empty-state" style="color: rgba(255,255,255,0.4)">해당 조건에 맞는 캠페인이 없습니다.</div>';
+    return;
+  }
+  
+  grid.innerHTML = filtered.map(p => {
+    let thumbHtml = '';
+    
+    if (p.thumbnail) {
+      thumbHtml = '<img src="' + p.thumbnail + '" alt="' + (p.title || '') + '">' +
+        '<div class="play-overlay"><div class="play-icon">▶</div></div>';
+    } else {
+      thumbHtml = '<div class="play-overlay" style="background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);"><div class="play-icon">▶</div></div>';
+    }
+    
+    if (p.platform) {
+      thumbHtml += '<div class="portfolio-platform-badge">' + p.platform + '</div>';
+    }
+    
+    const videoUrl = p.video_url || '#';
+    
+    return '<a href="' + videoUrl + '" target="_blank" rel="noopener" class="portfolio-card">' +
+      '<div class="portfolio-thumb">' + thumbHtml + '</div>' +
+      '<div class="portfolio-info">' +
+        '<div class="portfolio-client">' + (p.client || 'CAMPAIGN') + '</div>' +
+        '<div class="portfolio-title">' + (p.title || '-') + '</div>' +
+        '<div class="portfolio-stats">' +
+          '<div class="portfolio-stat">' +
+            '<div class="portfolio-stat-num">' + formatFollowers(p.views) + '</div>' +
+            '<div class="portfolio-stat-label">VIEWS</div>' +
+          '</div>' +
+          '<div class="portfolio-stat">' +
+            '<div class="portfolio-stat-num">' + formatFollowers(p.engagement) + '</div>' +
+            '<div class="portfolio-stat-label">ENGAGEMENT</div>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+    '</a>';
+  }).join('');
+}
+
+async function loadSheetData(sheetName) {
+  if (!SHEETS_API_URL || SHEETS_API_URL === 'YOUR_APPS_SCRIPT_URL_HERE') {
+    return [];
+  }
+  try {
+    const response = await fetch(SHEETS_API_URL + '?sheet=' + sheetName);
+    const json = await response.json();
+    return json.data || [];
+  } catch (err) {
+    console.error('Failed to load ' + sheetName, err);
+    return [];
+  }
+}
+
+async function initializeData() {
+  creatorsData = await loadSheetData('creators');
+  renderCreators();
+  
+  portfolioData = await loadSheetData('portfolio');
+  renderPortfolio();
+}
+
+document.querySelectorAll('#creator-platform-filter .filter-btn, #creator-category-filter .filter-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const filterType = this.dataset.filter;
+    const filterValue = this.dataset.value;
+    creatorFilters[filterType] = filterValue;
+    
+    const groupId = filterType === 'platform' ? '#creator-platform-filter' : '#creator-category-filter';
+    document.querySelectorAll(groupId + ' .filter-btn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    
+    renderCreators();
+  });
+});
+
+document.querySelectorAll('#portfolio-filter .filter-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    portfolioFilters.platform = this.dataset.value;
+    document.querySelectorAll('#portfolio-filter .filter-btn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    renderPortfolio();
+  });
+});
+
+initializeData();
+</script>
+
+</body>
+</html>
