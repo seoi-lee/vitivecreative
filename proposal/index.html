@@ -50,12 +50,42 @@ html, body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 80px 100px 100px;
+  align-items: center;
+  padding: 80px 60px 100px;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   transform: translateX(40px);
   overflow-y: auto;
+}
+
+/* 슬라이드 내부 콘텐츠를 중앙 정렬 카드처럼 max-width 제한 */
+.slide > *:not(.slide-header) {
+  width: 100%;
+  max-width: 1080px;
+}
+
+/* 패키지 슬라이드는 좌우 분할 - 내부를 중앙 정렬 */
+.slide.package-slide {
+  flex-direction: row;
+  gap: 60px;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide.package-slide > .package-left,
+.slide.package-slide > .package-right {
+  max-width: none;
+}
+
+.slide.package-slide .package-left {
+  flex: 1;
+  max-width: 440px;
+}
+
+.slide.package-slide .package-right {
+  flex: 1;
+  max-width: 440px;
 }
 
 .slide.active {
@@ -76,8 +106,11 @@ html, body {
 .slide-header {
   position: absolute;
   top: 32px;
-  left: 100px;
-  right: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1080px;
+  padding: 0 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -540,12 +573,6 @@ html, body {
 }
 
 /* ===== 8, 9, 10. 패키지 ===== */
-.package-slide {
-  flex-direction: row;
-  gap: 60px;
-  align-items: center;
-}
-
 .package-left {
   flex: 1;
 }
