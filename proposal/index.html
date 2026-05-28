@@ -1,1 +1,1778 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="VITIVE CREATIVE 서비스 소개서 - 콘텐츠 협찬 캠페인 에이전시">
+<title>VITIVE CREATIVE | 서비스 소개서</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --black: #0a0a0a;
+  --dark: #1a1a1a;
+  --gray: #888;
+  --light: #f4f1eb;
+  --white: #ffffff;
+  --orange: #ff6b1a;
+  --orange-dim: rgba(255, 107, 26, 0.15);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  font-family: 'Noto Sans KR', -apple-system, sans-serif;
+  background: var(--black);
+  color: var(--white);
+  overflow: hidden;
+  height: 100vh;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+}
+
+.eng { font-family: 'Inter', sans-serif; }
+
+/* ===== 슬라이드 컨테이너 ===== */
+.proposal-wrap {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 100px 100px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateX(40px);
+  overflow-y: auto;
+}
+
+.slide.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.slide.prev {
+  transform: translateX(-40px);
+}
+
+/* 스크롤바 숨김 */
+.slide::-webkit-scrollbar { display: none; }
+.slide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ===== 공통 헤더 (상단 브랜드 + 페이지 번호) ===== */
+.slide-header {
+  position: absolute;
+  top: 32px;
+  left: 100px;
+  right: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  z-index: 5;
+}
+
+.slide-header .brand {
+  color: var(--white);
+}
+
+.slide-header .brand .dot { color: var(--orange); }
+
+.slide-header .page-num {
+  color: rgba(255,255,255,0.4);
+}
+
+/* ===== 하단 인디케이터 ===== */
+.indicator-bar {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  z-index: 100;
+  padding: 10px 16px;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.dot:hover {
+  background: rgba(255,255,255,0.5);
+}
+
+.dot.active {
+  background: var(--orange);
+  width: 24px;
+  border-radius: 4px;
+}
+
+/* ===== 좌우 화살표 버튼 ===== */
+.nav-arrow {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.nav-arrow:hover:not(:disabled) {
+  background: rgba(255, 107, 26, 0.2);
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.nav-arrow:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+
+.nav-arrow.prev { left: 32px; }
+.nav-arrow.next { right: 32px; }
+
+/* ===== 사이트 복귀 버튼 ===== */
+.back-to-site {
+  position: fixed;
+  top: 28px;
+  right: 28px;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  padding: 8px 14px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 999px;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  transition: all 0.3s;
+}
+
+.back-to-site:hover {
+  color: var(--orange);
+  border-color: var(--orange);
+}
+
+/* ===== 1. 표지 ===== */
+.slide-cover {
+  background: radial-gradient(ellipse at top right, rgba(255, 107, 26, 0.18) 0%, transparent 50%),
+              linear-gradient(135deg, #0a0a0a 0%, #1a0a02 80%, #2a1505 100%);
+  text-align: center;
+  align-items: center;
+}
+
+.slide-cover::after {
+  content: 'VITIVE';
+  position: absolute;
+  bottom: -50px;
+  right: -30px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: 240px;
+  color: rgba(255, 107, 26, 0.04);
+  letter-spacing: -0.05em;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.cover-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: var(--orange);
+  letter-spacing: 0.25em;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+
+.cover-title {
+  font-size: clamp(40px, 6vw, 84px);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  margin-bottom: 32px;
+}
+
+.cover-title .accent { color: var(--orange); }
+
+.cover-sub {
+  font-size: clamp(16px, 1.5vw, 20px);
+  color: rgba(255,255,255,0.6);
+  line-height: 1.7;
+  max-width: 600px;
+  margin-bottom: 80px;
+  font-weight: 500;
+}
+
+.cover-meta {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 40px;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+
+/* ===== 공통 헤딩 스타일 ===== */
+.slide-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: var(--orange);
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.slide-title {
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  margin-bottom: 32px;
+  max-width: 900px;
+}
+
+.slide-title .accent { color: var(--orange); }
+
+.slide-lead {
+  font-size: clamp(15px, 1.3vw, 18px);
+  color: rgba(255,255,255,0.7);
+  line-height: 1.8;
+  max-width: 720px;
+  margin-bottom: 48px;
+  font-weight: 500;
+}
+
+/* ===== 2. 인사말 ===== */
+.greeting-block {
+  max-width: 800px;
+}
+
+.greeting-text {
+  font-size: clamp(18px, 1.6vw, 22px);
+  color: rgba(255,255,255,0.85);
+  line-height: 1.9;
+  margin-bottom: 32px;
+  font-weight: 500;
+}
+
+.greeting-text strong {
+  color: var(--orange);
+  font-weight: 800;
+}
+
+.signature {
+  margin-top: 56px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.signature-line {
+  width: 60px;
+  height: 1px;
+  background: var(--orange);
+}
+
+.signature-name {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.signature-name strong {
+  color: var(--white);
+  font-weight: 800;
+}
+
+/* ===== 3. 시장 진단 - 데이터 박스 ===== */
+.stat-block {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+  max-width: 900px;
+}
+
+.stat-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 32px 24px;
+}
+
+.stat-card .num {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 900;
+  color: var(--orange);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+}
+
+.stat-card .label {
+  font-size: 14px;
+  color: rgba(255,255,255,0.75);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.stat-card .desc {
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.6;
+}
+
+/* ===== 4. 차별점 3가지 ===== */
+.reason-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+}
+
+.reason-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 36px 28px;
+  position: relative;
+  overflow: hidden;
+}
+
+.reason-card .num {
+  font-family: 'Inter', sans-serif;
+  font-size: 56px;
+  font-weight: 900;
+  color: var(--orange);
+  line-height: 0.9;
+  margin-bottom: 24px;
+  letter-spacing: -0.04em;
+}
+
+.reason-card h3 {
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1.35;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.reason-card p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.7;
+  font-weight: 500;
+}
+
+/* ===== 5. 4채널 ===== */
+.channel-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  max-width: 1100px;
+}
+
+.channel-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 28px 20px;
+}
+
+.channel-card .label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: var(--orange);
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  margin-bottom: 14px;
+}
+
+.channel-card h4 {
+  font-size: 17px;
+  font-weight: 900;
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+
+.channel-card p {
+  font-size: 12px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.65;
+  font-weight: 500;
+}
+
+/* ===== 6. 크리에이터 풀 ===== */
+.pool-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+}
+
+.pool-card {
+  background: linear-gradient(160deg, rgba(255,255,255,0.04) 0%, rgba(255, 107, 26, 0.06) 100%);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 32px 28px;
+  position: relative;
+}
+
+.pool-card .eng-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--orange);
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+  line-height: 1.1;
+}
+
+.pool-card .kor-label {
+  font-size: 14px;
+  color: var(--white);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.pool-card .stats {
+  display: flex;
+  gap: 16px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.pool-card .stats strong {
+  color: var(--orange);
+  font-weight: 800;
+}
+
+/* ===== 7. 프로세스 5단계 ===== */
+.process-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 800px;
+}
+
+.process-item {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 24px;
+  padding: 18px 24px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  align-items: center;
+}
+
+.process-num {
+  font-family: 'Inter', sans-serif;
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--orange);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.process-content h4 {
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+
+.process-content p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* ===== 8, 9, 10. 패키지 ===== */
+.package-slide {
+  flex-direction: row;
+  gap: 60px;
+  align-items: center;
+}
+
+.package-left {
+  flex: 1;
+}
+
+.package-right {
+  flex: 1;
+  max-width: 480px;
+}
+
+.package-num-big {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: var(--orange);
+  letter-spacing: 0.2em;
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+.package-title {
+  font-size: clamp(32px, 3.5vw, 48px);
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+}
+
+.package-title .accent { color: var(--orange); }
+
+.package-desc {
+  font-size: 15px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.8;
+  margin-bottom: 32px;
+  font-weight: 500;
+}
+
+.recommended-badge {
+  display: inline-block;
+  background: var(--orange);
+  color: var(--black);
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+
+.package-features {
+  list-style: none;
+  margin-bottom: 32px;
+}
+
+.package-features li {
+  display: flex;
+  gap: 12px;
+  padding: 10px 0;
+  font-size: 14px;
+  color: rgba(255,255,255,0.8);
+  font-weight: 500;
+  line-height: 1.5;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.package-features li:last-child { border-bottom: none; }
+
+.package-features .check {
+  color: var(--orange);
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.package-price-box {
+  background: linear-gradient(135deg, rgba(255, 107, 26, 0.08) 0%, rgba(255, 107, 26, 0.02) 100%);
+  border: 1.5px solid rgba(255, 107, 26, 0.3);
+  border-radius: 20px;
+  padding: 32px 28px;
+}
+
+.package-price-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: var(--orange);
+  letter-spacing: 0.15em;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.package-price {
+  font-family: 'Inter', sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  color: var(--white);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.package-price .currency {
+  font-size: 22px;
+  color: rgba(255,255,255,0.6);
+  font-weight: 700;
+}
+
+.package-price-note {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+.package-target {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px dashed rgba(255,255,255,0.1);
+}
+
+.package-target .label {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  color: var(--orange);
+  letter-spacing: 0.15em;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.package-target .text {
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* ===== 11. 케이스 스터디 ===== */
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+}
+
+.case-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 32px 28px;
+}
+
+.case-card .tag {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  color: var(--orange);
+  letter-spacing: 0.15em;
+  font-weight: 800;
+  margin-bottom: 16px;
+  padding: 4px 12px;
+  border: 1px solid rgba(255, 107, 26, 0.3);
+  border-radius: 999px;
+}
+
+.case-card h4 {
+  font-size: 20px;
+  font-weight: 900;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.case-card .case-detail {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.7;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.case-card .case-result {
+  padding-top: 16px;
+  border-top: 1px dashed rgba(255,255,255,0.1);
+  font-size: 13px;
+}
+
+.case-card .case-result strong {
+  color: var(--orange);
+  font-weight: 800;
+}
+
+.case-disclaimer {
+  margin-top: 24px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.35);
+  font-style: italic;
+}
+
+/* ===== 12. CTA ===== */
+.slide-cta {
+  background: radial-gradient(ellipse at bottom, rgba(255, 107, 26, 0.2) 0%, transparent 50%),
+              linear-gradient(180deg, #0a0a0a 0%, #1a0a02 60%, #2a1505 100%);
+  align-items: center;
+  text-align: center;
+}
+
+.cta-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: var(--orange);
+  letter-spacing: 0.25em;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.cta-title {
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.cta-title .accent { color: var(--orange); }
+
+.cta-sub {
+  font-size: clamp(15px, 1.3vw, 18px);
+  color: rgba(255,255,255,0.65);
+  line-height: 1.8;
+  max-width: 600px;
+  margin-bottom: 56px;
+  font-weight: 500;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 18px 36px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: all 0.3s;
+  letter-spacing: -0.01em;
+}
+
+.cta-btn.primary {
+  background: var(--orange);
+  color: var(--black);
+  box-shadow: 0 8px 24px rgba(255, 107, 26, 0.3);
+}
+
+.cta-btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(255, 107, 26, 0.4);
+}
+
+.cta-btn.secondary {
+  background: rgba(255,255,255,0.05);
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.cta-btn.secondary:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.cta-info {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+}
+
+.cta-info a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+}
+
+.cta-info a:hover { color: var(--orange); }
+
+/* ===== 슬라이드 7 (NEW): 매칭 시스템 ===== */
+.matching-criteria-slide {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 800px;
+  margin-bottom: 32px;
+}
+
+.criteria-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 20px 22px;
+}
+
+.criteria-card .criteria-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: var(--orange);
+  letter-spacing: 0.15em;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.criteria-card .criteria-value {
+  font-size: 18px;
+  font-weight: 900;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.criteria-card .criteria-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.quality-checks {
+  background: rgba(255, 107, 26, 0.08);
+  border: 1px solid rgba(255, 107, 26, 0.25);
+  border-radius: 16px;
+  padding: 22px 28px;
+  max-width: 800px;
+}
+
+.quality-check-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: var(--orange);
+  letter-spacing: 0.15em;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+.quality-check-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.85);
+  font-weight: 600;
+}
+
+.quality-check {
+  white-space: nowrap;
+}
+
+/* ===== 슬라이드 8 (NEW): 피드백 시스템 ===== */
+.feedback-stages-slide {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 800px;
+}
+
+.feedback-stage-slide {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 22px 24px;
+  transition: all 0.3s;
+}
+
+.feedback-stage-slide:hover {
+  border-color: var(--orange);
+  background: rgba(255, 107, 26, 0.04);
+}
+
+.feedback-stage-slide .stage-num-slide {
+  font-family: 'Inter', sans-serif;
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--orange);
+  line-height: 0.9;
+  margin-bottom: 16px;
+  letter-spacing: -0.03em;
+}
+
+.feedback-stage-slide h4 {
+  font-size: 17px;
+  font-weight: 900;
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+
+.feedback-stage-slide p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.65;
+  font-weight: 500;
+}
+
+/* ===== 반응형 - 모바일 ===== */
+@media (max-width: 768px) {
+  .slide {
+    padding: 80px 28px 100px;
+    justify-content: flex-start;
+    padding-top: 100px;
+  }
+  
+  .slide-header {
+    left: 28px;
+    right: 28px;
+  }
+  
+  .slide-cover::after {
+    font-size: 140px;
+    bottom: -30px;
+  }
+  
+  .slide-cover {
+    justify-content: center;
+  }
+  
+  .cover-meta {
+    bottom: 80px;
+    gap: 20px;
+    font-size: 10px;
+  }
+  
+  .nav-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+  
+  .nav-arrow.prev { left: 12px; }
+  .nav-arrow.next { right: 12px; }
+  
+  .back-to-site {
+    top: 20px;
+    right: 20px;
+    font-size: 10px;
+    padding: 6px 10px;
+  }
+  
+  /* 모바일 그리드 → 1열 */
+  .stat-block,
+  .reason-grid,
+  .channel-grid,
+  .pool-grid,
+  .case-grid,
+  .matching-criteria-slide,
+  .feedback-stages-slide {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  
+  .channel-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  
+  .criteria-card { padding: 16px 18px !important; }
+  .criteria-card .criteria-value { font-size: 15px !important; }
+  .quality-checks { padding: 18px 20px !important; }
+  .quality-check-list { gap: 10px !important; font-size: 12px !important; }
+  .feedback-stage-slide { padding: 18px 20px !important; }
+  .feedback-stage-slide h4 { font-size: 14px !important; }
+  
+  .package-slide {
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+  
+  .package-right {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  
+  /* 모바일 폰트 강제 축소 */
+  .cover-title { font-size: 36px !important; line-height: 1.2 !important; }
+  .cover-sub { font-size: 14px !important; margin-bottom: 40px !important; }
+  .slide-title { font-size: 26px !important; line-height: 1.3 !important; }
+  .slide-lead { font-size: 14px !important; margin-bottom: 28px !important; }
+  .greeting-text { font-size: 16px !important; line-height: 1.8 !important; }
+  .package-title { font-size: 28px !important; }
+  .package-desc { font-size: 13px !important; }
+  .package-features li { font-size: 13px !important; }
+  .package-price { font-size: 38px !important; }
+  .cta-title { font-size: 30px !important; }
+  .cta-sub { font-size: 14px !important; }
+  .cta-buttons { flex-direction: column; width: 100%; }
+  .cta-btn { width: 100%; justify-content: center; }
+  
+  .stat-card { padding: 22px 18px !important; }
+  .stat-card .num { font-size: 32px !important; }
+  .reason-card { padding: 26px 22px !important; }
+  .reason-card .num { font-size: 42px !important; }
+  .reason-card h3 { font-size: 17px !important; }
+  .channel-card { padding: 20px 16px !important; }
+  .pool-card { padding: 24px 22px !important; }
+  .process-item { padding: 14px 18px !important; }
+  .process-num { font-size: 22px !important; }
+  
+  .indicator-bar {
+    padding: 8px 12px;
+    bottom: 20px;
+  }
+  
+  .dot { width: 6px; height: 6px; }
+  .dot.active { width: 18px; }
+}
+</style>
+</head>
+<body>
+
+<a href="/" class="back-to-site">← 사이트로</a>
+
+<div class="proposal-wrap" id="proposalWrap">
+
+  <!-- ============================
+       슬라이드 1: 표지
+       ============================ -->
+  <section class="slide slide-cover active" data-slide="1">
+    <div class="slide-header">
+      <span class="brand">VITIVE<span class="dot">.</span>CREATIVE</span>
+      <span class="page-num">PROPOSAL</span>
+    </div>
+    
+    <div class="cover-eyebrow">CONTENT-DRIVEN INFLUENCER MARKETING</div>
+    <h1 class="cover-title">
+      브랜드를 위한<br>
+      <span class="accent">콘텐츠 협찬 캠페인</span>
+    </h1>
+    <p class="cover-sub">
+      블로그 강사가 직접 설계하는 실전 협찬 캠페인.<br>
+      검색되고 발견되는 콘텐츠 자산을 만듭니다.
+    </p>
+    
+    <div class="cover-meta">
+      <span>SERVICE PROPOSAL</span>
+      <span>·</span>
+      <span>2026</span>
+      <span>·</span>
+      <span>VITIVE CREATIVE</span>
+    </div>
+  </section>
+
+  <!-- ============================
+       슬라이드 2: 인사말
+       ============================ -->
+  <section class="slide" data-slide="2">
+    <div class="slide-header">
+      <span class="brand">VITIVE<span class="dot">.</span>CREATIVE</span>
+      <span class="page-num">02 / 14</span>
+    </div>
+    
+    <div class="slide-eyebrow">— GREETING</div>
+    <h2 class="slide-title">
+      안녕하세요,<br>
+      <span class="accent">VITIVE CREATIVE</span>입니다.
+    </h2>
+    
+    <div class="greeting-block">
+      <p class="greeting-text">
+        저희는 <strong>네이버 블로그·인스타·유튜브·네이버 클립</strong>
+        <strong>4개 플랫폼을 통합 운영</strong>하는 콘텐츠 협찬 캠페인 에이전시입니다.
+      </p>
+      <p class="greeting-text">
+        단순 체험단 모집이 아니라, <strong>검색되고 발견되는</strong>
+        브랜드의 콘텐츠 자산을 함께 설계합니다.
+      </p>
+      <p class="greeting-text">
+        이 제안서는 광고주님의 브랜드 단계와 목표에 맞는<br>
+        <strong>최적의 캠페인 구성</strong>을 안내드리기 위해 준비했습니다.
+      </p>
+      
+      <div class="signature">
+        <span class="signature-line"></span>
+        <span class="signature-name">
+          <strong>이서이</strong> · VITIVE CREATIVE 대표
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       슬라이드 3: 시장 진단
+       ============================ -->
+  <section class="slide" data-slide="3">
+    <div class="slide-header">
+      <span class="brand">VITIVE<span class="dot">.</span>CREATIVE</span>
+      <span class="page-num">03 / 14</span>
+    </div>
+    
+    <div class="slide-eyebrow">— MARKET INSIGHT</div>
+    <h2 class="slide-title">
+      광고는 짧지만,<br>
+      <span class="accent">검색 자산은 오래갑니다.</span>
+    </h2>
+    <p class="slide-lead">
+      소비자는 이제 검색하고, 비교하고, 저장합니다.
+      광고비를 태우는 것보다 <strong>검색에서 발견되는 콘텐츠</strong>가 브랜드의 무기가 됩니다.
+    </p>
+    
+    <div class="stat-block">
+      <div class="stat-card">
+        <div class="num">82%</div>
+        <div class="label">검색 후 구매 결정</div>
+        <div class="desc">소비자의 82%가 구매 전 검색·후기 확인</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">3x</div>
+        <div class="label">마이크로 인플루언서</div>
+        <div class="desc">메가 인플루언서 대비 전환율 평균 3배</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">365일</div>
+        <div class="label">검색 자산 지속</div>
+        <div class="desc">블로그 후기는 1년 이상 검색에 노출</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       슬라이드 4: 차별점 3가지
+       ============================ -->
+  <section class="slide" data-slide="4">
+    <div class="slide-header">
+      <span class="brand">VITIVE<span class="dot">.</span>CREATIVE</span>
+      <span class="page-num">04 / 14</span>
+    </div>
+    
+    <div class="slide-eyebrow">— WHY VITIVE</div>
+    <h2 class="slide-title">
+      VITIVE가 다른<br>
+      <span class="accent">3가지 이유</span>
+    </h2>
+    
+    <div class="reason-grid">
+      <div class="reason-card">
+        <div class="num">01</div>
+        <h3>블로그 강사가<br>직접 설계합니다</h3>
+        <p>네이버 블로그 강의 운영 경험을 가진 대표가 직접 캠페인을 설계합니다. 검색에 남는 제목·키워드·본문 흐름까지 함께 잡습니다.</p>
+      </div>
+      <div class="reason-card">
+        <div class="num">02</div>
+        <h3>교육받은<br>크리에이터와 함께</h3>
+        <p>무작위 모집이 아니라, 콘텐츠 작성 기준과 업로드 가이드를 이해한 리뷰어·크리에이터와만 운영합니다.</p>
+      </div>
+      <div class="reason-card">
+        <div class="num">03</div>
+        <h3>검색과 숏폼을<br>함께 봅니다</h3>
+        <p>네이버 블로그로 신뢰를 쌓고, 인스타 릴스·네이버 클립으로 발견을 만듭니다. 두 흐름을 같이 설계하는 게 핵심입니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       슬라이드 5: 4개 플랫폼
+       ============================ -->
+  <section class="slide" data-slide="5">
+    <div class="slide-header">
+      <span class="brand">VITIVE<span class="dot">.</span>CREATIVE</span>
+      <span class="page-num">05 / 14</span>
+    </div>
+    
+    <div class="slide-eyebrow">— OUR SERVICE</div>
+    <h2 class="slide-title">
+      4개의 플랫폼,<br>
+      <span class="accent">하나의 스토리</span>
+    </h2>
+    <p class="slide-lead">
+      각 플랫폼의 특성을 살려 캠페인을 설계합니다.
+      검색과 발견, 신뢰와 첫인상 모두 한 흐름으로 잡습니다.
+    </p>
+    
+    <div class="channel-grid">
+      <div class="channel-card">
+        <div class="label">CHANNEL 01</div>
+        <h4>네이버 블로그</h4>
+        <p>검색 점유 및 장기 자산. 1년 이상 검색에 노출되는 진성 후기 콘텐츠.</p>
+      </div>
+      <div class="channel-card">
+        <div class="label">CHANNEL 02</div>
+        <h4>인스타 릴스</h4>
+        <p>발견 탭 노출 + 첫인상 강화. 짧고 강한 임팩트로 브랜드 인지.</p>
+      </div>
+      <div class="channel-card">
+        <div class="label">CHANNEL 03</div>
+        <h4>네이버 클립</h4>
+        <p>쇼핑 연계 + 구매 직전 영향. 네이버 쇼핑 검색 결과 노출.</p>
+      </div>
+      <div class="channel-card">
+        <div class="label">CHANNEL 04</div>
+        <h4>유튜브 쇼츠</h4>
+        <p>알고리즘 노출 + 광범위 도달. 발견·추천 알고리즘 활용.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       슬라이드 6: 크리에이터 풀
+       ============================ -->
+  <section class="slide" data-slide="6">
+    <div class="slide-header">
+      <span class="brand">VITIVE<span class="dot">.</span>CREATIVE</span>
+      <span class="page-num">06 / 14</span>
+    </div>
+    
+    <div class="slide-eyebrow">— CREATOR POOL</div>
+    <h2 class="slide-title">
+      풀 보유 카테고리<br>
+      <span class="accent">랭킹 TOP 3</span>
+    </h2>
+    <p class="slide-lead">
+      현재 VITIVE가 가장 강한 3개 카테고리입니다.
+      해당 분야 캠페인은 <strong>즉시 매칭이 가능</strong>합니다.
+    </p>
+    
+    <div class="pool-grid">
+      <div class="pool-card">
+        <div class="eng-label">BEAUTY</div>
+        <div class="kor-label">뷰티</div>
+        <div class="stats">
+          <span><strong>5명+</strong> 매칭 가능</span>
+        </div>
+      </div>
+      <div class="pool-card">
+        <div class="eng-label">FASHION</div>
+        <div class="kor-label">패션</div>
+        <div class="stats">
+          <span><strong>3명+</strong> 매칭 가능</span>
+        </div>
+      </div>
+      <div class="pool-card">
+        <div class="eng-label">SPORTS<br>& HEALTH</div>
+        <div class="kor-label">운동·건강</div>
+        <div class="stats">
+          <span><strong>9명+</strong> 매칭 가능</span>
+        </div>
+      </div>
+    </div>
+    
+    <p style="margin-top: 32px; font-size: 13px; color: rgba(255,255,255,0.4); max-width: 700px;">
+      그 외 라이프스타일·푸드·리빙 등 카테고리도 캠페인별 매칭이 가능합니다.
+    </p>
+  </section>
+
+  <!-- ============================
+       슬라이드 7 (NEW): 매칭 시스템
+       ============================ -->
+  <section class="slide" data-slide="7">
+    <div class="slide-header">
+      <span class="brand">VITIVE<span class="dot">.</span>CREATIVE</span>
+      <span class="page-num">07 / 14</span>
+    </div>
+    
+    <div class="slide-eyebrow">— OUR MATCHING</div>
+    <h2 class="slide-title">
+      엄선된 풀에서<br>
+      <span class="accent">최적의 매칭</span>
+    </h2>
+    <p class="slide-lead">
+      무작위 모집이 아닙니다.
+      교육받은 리뷰어·크리에이터 중에서 <strong>브랜드 단계와 톤에 맞는</strong>
+      최적의 매칭을 제안드립니다.
+    </p>
+    
+    <div class="matching-criteria-slide">
+      <div class="criteria-card">
+        <div class="criteria-label">CATEGORY</div>
+        <div class="criteria-value">카테고리 일치</div>
+        <div class="criteria-desc">뷰티/패션/운동·건강 등<br>브랜드 분야 매칭</div>
+      </div>
+      <div class="criteria-card">
+        <div class="criteria-label">TONE</div>
+        <div class="criteria-value">브랜드 톤</div>
+        <div class="criteria-desc">브랜드 보이스와<br>크리에이터 스타일 합</div>
+      </div>
+      <div class="criteria-card">
+        <div class="criteria-label">TIER</div>
+        <div class="criteria-value">크리에이터 등급</div>
+        <div class="criteria-desc">메가·미드·마이크로·나노<br>예산에 맞는 매칭</div>
+      </div>
+      <div class="criteria-card">
+        <div class="criteria-label">QUALITY</div>
+        <div class="criteria-value">콘텐츠 품질</div>
+        <div class="criteria-desc">정량 + 정성 기준<br>이중 검토</div>
+      </div>
+    </div>
+    
+    <div class="quality-checks">
+      <div class="quality-check-title">콘텐츠 퀄리티 체크</div>
+      <div class="quality-check-list">
+        <span class="quality-check">✓ 짧은 순간 시선 붙잡기</span>
+        <span class="quality-check">✓ 제품 가치 효과적 전달</span>
+        <span class="quality-check">✓ 진정성 있는 콘텐츠 제작</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       슬라이드 8 (NEW): 피드백 시스템
+       ============================ -->
+  <section class="slide" data-slide="8">
+    <div class="slide-header">
+      <span class="brand">VITIVE<span class="dot">.</span>CREATIVE</span>
+      <span class="page-num">08 / 14</span>
+    </div>
+    
+    <div class="slide-eyebrow">— OUR FEEDBACK</div>
+    <h2 class="slide-title">
+      내부 팀처럼<br>
+      <span class="accent">함께 만듭니다</span>
+    </h2>
+    <p class="slide-lead">
+      콘텐츠 기획부터 발행까지 모든 과정에서
+      브랜드와 크리에이터 사이의 합을 맞춰 최상의 결과를 함께 만듭니다.
+    </p>
+    
+    <div class="feedback-stages-slide">
+      <div class="feedback-stage-slide">
+        <div class="stage-num-slide">01</div>
+        <h4>대본 확인</h4>
+        <p>촬영 전 USP를 잘 표현한 대본 및 피드백 확인</p>
+      </div>
+      <div class="feedback-stage-slide">
+        <div class="stage-num-slide">02</div>
+        <h4>영상 초안 확인</h4>
+        <p>메시지 전달력 중점 검수 및 디벨롭 요청 가능</p>
+      </div>
+      <div class="feedback-stage-slide">
+        <div class="stage-num-slide">03</div>
+        <h4>최종 영상 확인</h4>
+        <p>완성도 및 오류 사항 마지막 확인</p>
+      </div>
+      <div class="feedback-stage-slide">
+        <div class="stage-num-slide">04</div>
+        <h4>SNS 업로드</h4>
+        <p>가이드라인에 따라 발행 + 결과 데이터 수집</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       슬라이드 9 (구 7): 5단계 프로세스
+       ============================ -->
+  <section class="slide" data-slide="9">
+    <div class="slide-header">
+      <span class="brand">VITIVE<span class="dot">.</span>CREATIVE</span>
+      <span class="page-num">09 / 14</span>
+    </div>
+    
+    <div class="slide-eyebrow">— PROCESS</div>
+    <h2 class="slide-title">
+      5단계 캠페인<br>
+      <span class="accent">프로세스</span>
+    </h2>
+    
+    <div class="process-list">
+      <div class="process-item">
+        <div class="process-num">01</div>
+        <div class="process-content">
+          <h4>무료 캠페인 진단</h4>
+          <p>브랜드 현재 단계, 목표, 예산을 파악합니다.</p>
+        </div>
+      </div>
+      <div class="process-item">
+        <div class="process-num">02</div>
+        <div class="process-content">
+          <h4>크리에이터 매칭</h4>
+          <p>브랜드 톤에 맞는 정예 크리에이터를 매칭합니다.</p>
+        </div>
+      </div>
+      <div class="process-item">
+        <div class="process-num">03</div>
+        <div class="process-content">
+          <h4>콘텐츠 가이드 설계</h4>
+          <p>검색 키워드, 본문 흐름, 업로드 일정을 함께 설계합니다.</p>
+        </div>
+      </div>
+      <div class="process-item">
+        <div class="process-num">04</div>
+        <div class="process-content">
+          <h4>제작 및 발행</h4>
+          <p>가이드에 따라 콘텐츠 제작, 검수, 발행을 진행합니다.</p>
+        </div>
+      </div>
+      <div class="process-item">
+        <div class="process-num">05</div>
+        <div class="process-content">
+          <h4>결과 분석 리포트</h4>
+          <p>검색 노출, 인게이지먼트, 전환 데이터를 리포트로 제공합니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       슬라이드 8: 패키지 01
+       ============================ -->
+  <section class="slide package-slide" data-slide="10">
+    <div class="slide-header">
+      <span class="brand">VITIVE<span class="dot">.</span>CREATIVE</span>
+      <span class="page-num">10 / 14</span>
+    </div>
+    
+    <div class="package-left">
+      <div class="package-num-big">PACKAGE 01</div>
+      <h2 class="package-title">
+        블로그 검색<br>
+        <span class="accent">장악 패키지</span>
+      </h2>
+      <p class="package-desc">
+        정예 블로거 10명이 네이버 검색에<br>
+        장기 자산을 만드는 실속형 패키지.<br>
+        로컬 브랜드·신규 매장 추천.
+      </p>
+    </div>
+    
+    <div class="package-right">
+      <ul class="package-features">
+        <li><span class="check">✓</span> 정예 블로거 10명 매칭</li>
+        <li><span class="check">✓</span> 상위 노출 키워드 가이드라인</li>
+        <li><span class="check">✓</span> 제목·본문 흐름 설계</li>
+        <li><span class="check">✓</span> 원고 사전 검토 (1회 수정)</li>
+        <li><span class="check">✓</span> 업로드 결과 보고서</li>
+      </ul>
+      
+      <div class="package-price-box">
+        <div class="package-price-label">SPECIAL PRICE</div>
+        <div class="package-price">55<span class="currency">만 원~</span></div>
+        <div class="package-price-note">신규 캠페인 모집 중 · 협찬 제품 별도</div>
+        
+        <div class="package-target">
+          <div class="label">RECOMMENDED FOR</div>
+          <div class="text">로컬 매장 · 신규 브랜드 · 검색 자산 구축이 필요한 브랜드</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       슬라이드 9: 패키지 02
+       ============================ -->
+  <section class="slide package-slide" data-slide="11">
+    <div class="slide-header">
+      <span class="brand">VITIVE<span class="dot">.</span>CREATIVE</span>
+      <span class="page-num">11 / 14</span>
+    </div>
+    
+    <div class="package-left">
+      <div class="package-num-big">PACKAGE 02</div>
+      <h2 class="package-title">
+        인스타 릴스<br>
+        <span class="accent">확산 패키지</span>
+      </h2>
+      <p class="package-desc">
+        인스타 릴스 크리에이터 5명이<br>
+        발견 탭과 첫인상을 동시에 잡는<br>
+        숏폼 확산 패키지.
+      </p>
+    </div>
+    
+    <div class="package-right">
+      <ul class="package-features">
+        <li><span class="check">✓</span> 인스타 릴스 크리에이터 5명 매칭</li>
+        <li><span class="check">✓</span> 후킹 카피·구성 가이드</li>
+        <li><span class="check">✓</span> 대본 사전 검토 + 영상 검수 (2회)</li>
+        <li><span class="check">✓</span> PA코드 무상 제공</li>
+        <li><span class="check">✓</span> 2차 활용권 3개월 포함</li>
+        <li><span class="check">✓</span> 도달·조회·저장 데이터 리포트</li>
+      </ul>
+      
+      <div class="package-price-box">
+        <div class="package-price-label">SPECIAL PRICE</div>
+        <div class="package-price">120<span class="currency">만 원~</span></div>
+        <div class="package-price-note">신규 캠페인 모집 중 · 협찬 제품 별도</div>
+        
+        <div class="package-target">
+          <div class="label">RECOMMENDED FOR</div>
+          <div class="text">신제품 출시 · 브랜드 첫인상 강화 · 발견 도달 확장</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       슬라이드 10: 패키지 03 (추천)
+       ============================ -->
+  <section class="slide package-slide" data-slide="12">
+    <div class="slide-header">
+      <span class="brand">VITIVE<span class="dot">.</span>CREATIVE</span>
+      <span class="page-num">12 / 14</span>
+    </div>
+    
+    <div class="package-left">
+      <div class="recommended-badge">RECOMMENDED</div>
+      <div class="package-num-big">PACKAGE 03</div>
+      <h2 class="package-title">
+        VITIVE 시그니처<br>
+        <span class="accent">통합 패키지</span>
+      </h2>
+      <p class="package-desc">
+        블로그 + 인스타 릴스 + 네이버 클립.<br>
+        검색과 발견을 동시에 공략하는<br>
+        올인원 통합 캠페인.
+      </p>
+    </div>
+    
+    <div class="package-right">
+      <ul class="package-features">
+        <li><span class="check">✓</span> 블로그 상위 노출 10명</li>
+        <li><span class="check">✓</span> 인스타 릴스 크리에이터 5명</li>
+        <li><span class="check">✓</span> 네이버 클립 크리에이터 5명</li>
+        <li><span class="check">✓</span> 사전 기획안 + 대본 검토</li>
+        <li><span class="check">✓</span> 영상/콘텐츠 검수 (무제한 수정)</li>
+        <li><span class="check">✓</span> PA코드 무상 제공</li>
+        <li><span class="check">✓</span> 2차 활용권 6개월 포함</li>
+        <li><span class="check">✓</span> 통합 분석 + 풀 리포트</li>
+      </ul>
+      
+      <div class="package-price-box">
+        <div class="package-price-label">SPECIAL PRICE</div>
+        <div class="package-price">250<span class="currency">만 원~</span></div>
+        <div class="package-price-note">신규 캠페인 모집 중 · 협찬 제품 별도</div>
+        
+        <div class="package-target">
+          <div class="label">RECOMMENDED FOR</div>
+          <div class="text">신제품 출시 · 신규 매장 홍보 · 통합 캠페인 사업자</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       슬라이드 11: 케이스 스터디
+       ============================ -->
+  <section class="slide" data-slide="13">
+    <div class="slide-header">
+      <span class="brand">VITIVE<span class="dot">.</span>CREATIVE</span>
+      <span class="page-num">13 / 14</span>
+    </div>
+    
+    <div class="slide-eyebrow">— SAMPLE CASE</div>
+    <h2 class="slide-title">
+      샘플 캠페인<br>
+      <span class="accent">운영 예시</span>
+    </h2>
+    <p class="slide-lead">
+      실제로 진행 가능한 캠페인 구조 예시입니다.
+      광고주 브랜드 단계와 목표에 맞춰 커스터마이징됩니다.
+    </p>
+    
+    <div class="case-grid">
+      <div class="case-card">
+        <span class="tag">CASE 01</span>
+        <h4>로컬 뷰티샵 검색 후기 캠페인</h4>
+        <div class="case-detail">
+          블로그 리뷰 5건 + 인스타 스토리 3건<br>
+          → 지역명+시술 키워드 검색 노출
+        </div>
+        <div class="case-result">
+          예상 결과: <strong>네이버 검색 상위 노출 + 후기 신뢰 확보</strong>
+        </div>
+      </div>
+      
+      <div class="case-card">
+        <span class="tag">CASE 02</span>
+        <h4>신제품 숏폼 UGC 캠페인</h4>
+        <div class="case-detail">
+          릴스 영상 5개 + 제품컷 20장<br>
+          → 발견 탭 노출 + 상세페이지 활용
+        </div>
+        <div class="case-result">
+          예상 결과: <strong>발견 도달 ↑ + 광고 소재 자산 확보</strong>
+        </div>
+      </div>
+    </div>
+    
+    <p class="case-disclaimer">
+      * 위 사례는 가상 시나리오이며, 실제 캠페인 결과는 광고주 브랜드 단계와 콘텐츠 기획에 따라 달라집니다.
+    </p>
+  </section>
+
+  <!-- ============================
+       슬라이드 12: CTA 마무리
+       ============================ -->
+  <section class="slide slide-cta" data-slide="14">
+    <div class="slide-header">
+      <span class="brand">VITIVE<span class="dot">.</span>CREATIVE</span>
+      <span class="page-num">14 / 14</span>
+    </div>
+    
+    <div class="cta-eyebrow">— GET STARTED</div>
+    <h2 class="cta-title">
+      지금 바이티브는<br>
+      <span class="accent">신규 캠페인 모집 중</span>
+    </h2>
+    <p class="cta-sub">
+      브랜드 단계·목표·예산을 알려주시면<br>
+      <strong>무료로 캠페인 가능성을 진단</strong>해 드립니다.
+    </p>
+    
+    <div class="cta-buttons">
+      <a href="https://www.vitivecreative.co.kr/#contact" class="cta-btn primary">
+        무료 캠페인 진단 신청 →
+      </a>
+      <a href="https://www.vitivecreative.co.kr" class="cta-btn secondary">
+        사이트 둘러보기
+      </a>
+    </div>
+    
+    <div class="cta-info">
+      <span>vitivecreative.co.kr</span>
+      <span>·</span>
+      <a href="https://www.instagram.com/shesblanc/" target="_blank">@shesblanc</a>
+      <span>·</span>
+      <span>사업자등록번호 722-19-02037</span>
+    </div>
+  </section>
+
+</div>
+
+<!-- 좌우 화살표 -->
+<button class="nav-arrow prev" id="prevBtn" aria-label="이전">←</button>
+<button class="nav-arrow next" id="nextBtn" aria-label="다음">→</button>
+
+<!-- 하단 인디케이터 -->
+<div class="indicator-bar" id="indicatorBar"></div>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
+let currentSlide = 0;
+
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const indicatorBar = document.getElementById('indicatorBar');
+
+// 인디케이터 생성
+for (let i = 0; i < totalSlides; i++) {
+  const dot = document.createElement('span');
+  dot.className = 'dot' + (i === 0 ? ' active' : '');
+  dot.dataset.index = i;
+  dot.addEventListener('click', () => goToSlide(i));
+  indicatorBar.appendChild(dot);
+}
+
+const dots = document.querySelectorAll('.indicator-bar .dot');
+
+function goToSlide(index) {
+  if (index < 0 || index >= totalSlides) return;
+  
+  slides.forEach((slide, i) => {
+    slide.classList.remove('active', 'prev');
+    if (i === index) {
+      slide.classList.add('active');
+    } else if (i < index) {
+      slide.classList.add('prev');
+    }
+  });
+  
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
+  });
+  
+  currentSlide = index;
+  
+  prevBtn.disabled = index === 0;
+  nextBtn.disabled = index === totalSlides - 1;
+  
+  // 슬라이드 상단으로 스크롤
+  slides[index].scrollTop = 0;
+}
+
+prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
+nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
+
+// 키보드 이벤트
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight' || e.key === ' ') {
+    e.preventDefault();
+    goToSlide(currentSlide + 1);
+  } else if (e.key === 'ArrowLeft') {
+    e.preventDefault();
+    goToSlide(currentSlide - 1);
+  } else if (e.key === 'Escape') {
+    goToSlide(0);
+  } else if (e.key === 'Home') {
+    goToSlide(0);
+  } else if (e.key === 'End') {
+    goToSlide(totalSlides - 1);
+  }
+});
+
+// 모바일 스와이프
+let touchStartX = 0;
+let touchEndX = 0;
+
+document.addEventListener('touchstart', (e) => {
+  touchStartX = e.changedTouches[0].screenX;
+}, { passive: true });
+
+document.addEventListener('touchend', (e) => {
+  touchEndX = e.changedTouches[0].screenX;
+  handleSwipe();
+}, { passive: true });
+
+function handleSwipe() {
+  const diff = touchStartX - touchEndX;
+  if (Math.abs(diff) < 50) return; // 너무 작은 스와이프 무시
+  
+  if (diff > 0) {
+    goToSlide(currentSlide + 1); // 왼쪽 스와이프 → 다음
+  } else {
+    goToSlide(currentSlide - 1); // 오른쪽 스와이프 → 이전
+  }
+}
+
+// 초기 상태
+goToSlide(0);
+</script>
+
+</body>
+</html>
